@@ -1,0 +1,15 @@
+services:
+  windows:
+    image: dockurr/windows
+    container_name: windows
+    environment:
+      VERSION: "7"
+    dns:
+      - 8.8.8.8
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "8006:8006"
+    stop_grace_period: 2m
