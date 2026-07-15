@@ -1,20 +1,14 @@
-# 基于Github codespaces 免费部署云端 Windows 免费虚拟机
+# 基于Github codespaces 免费部署云端 Windows 搭建 Tailscale 出口节点
 
 ---
 
-## 启动容器
+## 免费部署云端 Windows 启动容器
  
 ```bash
 
 docker compose -f win10.yml up -d
 
 ```
-
-# GitHub Codespaces 搭建 Tailscale 出口节点完整文档
-
-（手动后台运行 `tailscaled` 守护进程版）
-
----
 
 ## 一、Tailscale 介绍
 
