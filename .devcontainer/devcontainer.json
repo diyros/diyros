@@ -13,7 +13,8 @@
   },
   "postStartCommand": [
     "sleep 5",
-    "sudo tailscale up --authkey=${TAILSCALE_AUTHKEY} --exit-node"
+    "sudo tailscale set --advertise-exit-node",
+    "sudo tailscale up --authkey=${TAILSCALE_AUTHKEY}"
   ],
   "remoteUser": "codespace"
 }
