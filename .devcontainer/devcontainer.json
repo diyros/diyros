@@ -9,6 +9,6 @@
       "version": "latest"
     }
   },
-  "postStartCommand": "tailscale up --advertise-exit-node --authkey=${TAILSCALE_AUTHKEY} --reset",
+  "postStartCommand": "sudo tailscale up --authkey=${TAILSCALE_AUTHKEY} --advertise-exit-node --reset",
   "remoteUser": "codespace"
 }
