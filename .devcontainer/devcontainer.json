@@ -1,7 +1,5 @@
 {
   "name": "Tailscale ExitNode",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "privileged": true,
   "capAdd": [
     "NET_ADMIN",
     "NET_RAW"
