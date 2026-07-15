@@ -11,11 +11,6 @@
       "version": "latest"
     }
   },
-  "postStartCommand": [
-    "sudo tailscaled --tun=userspace-networking --state=/tmp/tailscale.state > /tmp/tailscale.log 2>&1 &",
-    "sleep 5",
-    "sudo tailscale set --advertise-exit-node",
-    "sudo tailscale up --authkey=${TAILSCALE_AUTHKEY}"
-  ],
+  "postStartCommand": "tailscale up --advertise-exit-node --authkey=${TAILSCALE_AUTHKEY} --reset",
   "remoteUser": "codespace"
 }
