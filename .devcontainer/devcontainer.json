@@ -2,13 +2,27 @@
   "name": "Tailscale ExitNode",
   "capAdd": [
     "NET_ADMIN",
-    "NET_RAW"
+    "NET_RAW",
+    "SYS_MODULE"
   ],
   "features": {
     "ghcr.io/tailscale/codespace/tailscale": {
       "version": "latest"
     }
   },
-  "postStartCommand": "sudo tailscale up --authkey=${TAILSCALE_AUTHKEY} --advertise-exit-node --reset",
-  "remoteUser": "codespace"
+  "remoteUser": "codespace",
+  "postStartCommand": "/bin/bash -c 'sudo tailscale set --auto-update && sudo tailscale up --authkey=${TAILSCALE_AUTHKEY} --advertise-exit-node --reset --accept-dns=false'",
+  "mounts": [
+    {
+      "type": "tmpfs",
+      "destination": "/tmp/tailscale",
+      "tmpfsOptions": {
+        "size": "64M"
+      }
+    }
+  ],
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  }
 }
